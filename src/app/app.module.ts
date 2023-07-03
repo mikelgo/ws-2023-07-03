@@ -7,6 +7,7 @@ import { CounterComponent } from './counter/counter.component';
 import {MemLeakComponent} from "./mem-leak/mem-leak.component";
 import {HttpClientModule} from "@angular/common/http";
 import {ResizeComponent} from "./resize/resize.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ResizeComponent} from "./resize/resize.component";
     CounterComponent,
     MemLeakComponent,
     HttpClientModule,
-    ResizeComponent
+    ResizeComponent,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
