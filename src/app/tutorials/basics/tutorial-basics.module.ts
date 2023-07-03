@@ -31,6 +31,8 @@ import { PresenterPatternSolution } from './6-presenter-pattern/presenter-patter
 import { PresenterPatternStart } from './6-presenter-pattern/presenter-pattern.start.component';
 import { DemoBasicsComponent } from './solution/demo-basics.component';
 import { DemoBasicsContainerComponent } from './solution/demo-basics.container.component';
+import {SetupSolutionContainerComponent} from "./1-setup/setup-solution-container.component";
+import {LetModule} from "@rx-angular/template/let";
 
 export const ROUTES = [
   {
@@ -87,6 +89,7 @@ const DECLARATIONS = [
   PresenterPatternSolution,
   DemoBasicsContainerComponent,
   DemoBasicsComponent,
+  SetupSolutionContainerComponent
 ];
 export const materialModules = [
   MatIconModule,
@@ -103,7 +106,7 @@ export const materialModules = [
 
 @NgModule({
   declarations: [DECLARATIONS],
-  imports: [CommonModule, materialModules, RouterModule.forChild(ROUTES)],
+  imports: [CommonModule, materialModules, RouterModule.forChild(ROUTES), LetModule],
   exports: [DECLARATIONS],
 })
 export class TutorialBasicsModule {}

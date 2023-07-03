@@ -15,8 +15,8 @@ import { map } from 'rxjs/operators';
       />
     </mat-form-field>
 
-    <rxa-presenter-pattern-start [refreshInterval]="refreshInterval$ | async">
-    </rxa-presenter-pattern-start>
+    <rxa-presenter-pattern-solution [refreshInterval]="refreshInterval$">
+    </rxa-presenter-pattern-solution>
   `,
 })
 export class PresenterPatternContainerComponent {

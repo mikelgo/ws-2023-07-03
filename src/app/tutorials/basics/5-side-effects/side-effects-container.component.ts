@@ -15,8 +15,8 @@ import { map } from 'rxjs/operators';
         matInput/>
     </mat-form-field>
 
-    <rxa-side-effects-start [refreshInterval]="refreshInterval$ | async">
-    </rxa-side-effects-start>
+    <rxa-side-effects-solution [refreshInterval]="refreshInterval$ | async">
+    </rxa-side-effects-solution>
   `,
 })
 export class SideEffectsContainerComponent {
