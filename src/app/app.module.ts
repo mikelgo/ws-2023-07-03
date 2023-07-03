@@ -8,6 +8,7 @@ import {MemLeakComponent} from "./mem-leak/mem-leak.component";
 import {HttpClientModule} from "@angular/common/http";
 import {ResizeComponent} from "./resize/resize.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NavComponent} from "./core/nav.component";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MemLeakComponent,
     HttpClientModule,
     ResizeComponent,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NavComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

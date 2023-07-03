@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -16,7 +16,7 @@ import { map } from 'rxjs/operators';
     </mat-form-field>
 
     <rxa-setup-start
-      [refreshInterval]="refreshInterval$"
+      [refreshInterval]="refreshInterval$ | async"
       (listExpandedChange)="listExpandedChange$.next($event)"
     >
     </rxa-setup-start>
@@ -25,7 +25,7 @@ import { map } from 'rxjs/operators';
 })
 export class SetupContainerComponent {
   refreshIntervalInput$ = new Subject<Event>();
-  refreshInterval$ = this.refreshIntervalInput$.pipe(
+  refreshInterval$: Observable<number> = this.refreshIntervalInput$.pipe(
     map((e: any) => e.target.value)
   );
   listExpandedChange$ = new Subject<boolean>();

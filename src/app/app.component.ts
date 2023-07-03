@@ -4,16 +4,14 @@ import {firstValueFrom, from, of} from "rxjs";
 @Component({
   selector: 'app-root',
   template: `
-  <!--<app-counter/> -->
-<button (click)="toggle()">toggle Visibility</button>
-<app-mem-leak *ngIf="visible" />
-  <app-resize></app-resize>
+    <app-nav/>
+    <router-outlet></router-outlet>
+
   `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'rxjs-playground';
-  visible = true
 
 
   constructor() {
@@ -29,7 +27,7 @@ export class AppComponent {
     const source$ = of(100);
 
     //source$.toPromise().then(console.log)
-    firstValueFrom(source$)
+    //firstValueFrom(source$)
     /**
      * npm i -g @angular/cli
      * ---> ng version sollte Angular: >14.x.x liefern
@@ -37,7 +35,5 @@ export class AppComponent {
      */
   }
 
-  toggle() {
-    this.visible = !this.visible
-  }
+
 }
