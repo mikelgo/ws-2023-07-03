@@ -9,10 +9,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {ResizeComponent} from "./resize/resize.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NavComponent} from "./core/nav.component";
+import { CombinationOperatorsComponent } from './combination-operators/combination-operators.component';
+import { ErrorHandlingComponent } from './error-handling/error-handling.component';
+import {TutorialBasicsModule} from "./tutorials/basics/tutorial-basics.module";
 
 @NgModule({
   declarations: [
     AppComponent,
+    CombinationOperatorsComponent,
 
   ],
   imports: [
@@ -23,7 +27,9 @@ import {NavComponent} from "./core/nav.component";
     HttpClientModule,
     ResizeComponent,
     BrowserAnimationsModule,
-    NavComponent
+    NavComponent,
+    ErrorHandlingComponent,
+    TutorialBasicsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -127,6 +127,8 @@ export class SetupStart implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.resetRefreshTick();
+    // zusätzlcihe Subscription
+    this.listExpandedChanges.subscribe(() => this.listService.refetchList())
   }
 
   resetRefreshTick() {

@@ -3,7 +3,7 @@ import {Observable, Subject} from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'rxa-setup-container',
+  selector: 'rxa-setup-container-solution',
   template: `
     <h1>Setup</h1>
     <mat-form-field>

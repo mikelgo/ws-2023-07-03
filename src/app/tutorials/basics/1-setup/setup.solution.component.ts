@@ -48,7 +48,7 @@ const initComponentState = {
   template: `
     <h3>Setup</h3>
     <mat-expansion-panel
-      *rxLet="vm$; let vm"
+      *ngIf="vm$ | async as vm"
       (expandedChange)="
         vm.listExpanded = $event; ui.listExpandedChanges($event)
       "
@@ -125,7 +125,6 @@ export class SetupSolution {
     .select('refreshInterval')
     .pipe(switchMap((ms) => interval(ms)));
 
-  fetchEffect = (_) => this.listService.refetchList();
 
   constructor(
     private listService: ListService,
@@ -143,9 +142,9 @@ export class SetupSolution {
       this.listService.list$.pipe(map(this.parseListItems))
     );
 
-    this.ef.register(
+    this.model.hold(
       merge(this.autoTrigger$, this.ui.listExpandedChanges$),
-      this.fetchEffect
+      (_) => this.listService.refetchList()
     );
   }
 
